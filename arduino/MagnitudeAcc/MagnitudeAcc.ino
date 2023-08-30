@@ -28,6 +28,8 @@ void setup() {
       ;
   }
 
+  IMU.setAccODR(LSM6DS3::ODR_208_Hz);
+
 }
 
 void loop() {
@@ -71,14 +73,4 @@ void loop() {
     // float mag = (x * x) + (y * y) + (z * z);
     // Serial.println(mag);
   }
-}
-
-void listenForTrigger
-{
-
-}
-
-void noteOut
-{
-
 }

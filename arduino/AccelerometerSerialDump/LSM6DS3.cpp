@@ -55,7 +55,7 @@ int LSM6DS3::begin() {
 
   // Set the Accelerometer control register to work at 104 Hz, 4 g,and in bypass mode and enable ODR/4
   // low pass filter (check figure9 of LSM6DS3's datasheet)
-
+  
   setAccelerometerSettings(accFS | accODR | accBW);
 
   // set gyroscope power mode to high performance and bandwidth to 16 MHz
@@ -68,18 +68,13 @@ int LSM6DS3::begin() {
 }
 
 void LSM6DS3::setAccelerometerSettings(uint8_t accBitMaskSettings) {
-
+  
   writeRegister(LSM6DS3_CTRL1_XL, accBitMaskSettings);
 }
 
-
-void LSM6DS3::setAccSensitivity(LSM6DS3::FS_XL scale) {
+void LSM6DS3::setAccSensitivity(LSM6DS3::AccelerometerScale scale)
+{
   accFS = scale;
-  setAccelerometerSettings(accFS | accODR | accBW);
-}
-
-void LSM6DS3::setAccODR(LSM6DS3::ODR_XL odr) {
-  accODR = odr;
   setAccelerometerSettings(accFS | accODR | accBW);
 }
 
@@ -105,7 +100,7 @@ int LSM6DS3::readAcceleration(float& x, float& y, float& z) {
 
     return 0;
   }
-
+  
   switch (accFS) {
     case FS_2g:
       x = data[0] * 2.0 / 32768.0;
@@ -126,7 +121,7 @@ int LSM6DS3::readAcceleration(float& x, float& y, float& z) {
       x = data[0] * 8.0 / 32768.0;
       y = data[1] * 8.0 / 32768.0;
       z = data[2] * 8.0 / 32768.0;
-      break;
+      break;      
   }
 
   return 1;

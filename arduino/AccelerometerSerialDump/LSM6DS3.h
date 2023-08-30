@@ -49,7 +49,7 @@
 
 class LSM6DS3 {
 public:
-  enum ODR_XL {
+  enum AccelerometerODR {
     ODR_Power_down = 0x0,
     ODR_12_5_Hz = 0x10,
     ODR_26_Hz = 0x20,
@@ -63,14 +63,14 @@ public:
     ODR_6_66_kHz = 0xa0,
   };
 
-  enum FS_XL {
+  enum AccelerometerScale {
     FS_2g = 0x0,
     FS_16g = 0x4,
     FS_4g = 0x8,
     FS_8g = 0xc,
   };
 
-  enum BW_XL {
+  enum AccelerometerBandwidth {
     BW_400Hz = 0x0,
     BW_200Hz = 0x1,
     BW_100Hz = 0x2,
@@ -87,8 +87,7 @@ public:
 
   // Accelerometer
   void setAccelerometerSettings(uint8_t accBitMaskSettings);
-  void setAccSensitivity(LSM6DS3::FS_XL scale);
-  void setAccODR(LSM6DS3::ODR_XL odr);
+  void setAccSensitivity(LSM6DS3::AccelerometerScale scale);
   virtual int readAcceleration(float &x, float &y, float &z);  // Results are in g (earth gravity).
   virtual float accelerationSampleRate();                      // Sampling rate of the sensor.
   virtual int accelerationAvailable();                         // Check for available data from accelerometer
