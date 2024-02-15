@@ -7,11 +7,10 @@ bool isLEDOn = 0;
 int LED_PIN = 13;
 
 void timerCallback() {
-
   float currentTime = (float(millis()) / 1000.0f);
   time += currentTime - lastTime;
   Serial.println(time);
-  lastTime = currentTime;  
+  lastTime = currentTime;
 }
 
 void setup() {
@@ -90,5 +89,6 @@ void TC3_Handler() {
 }
 
 void stopTimer() {
+  TcCount32* TC = (TcCount32*)TC3;
   TC->CTRLA.reg = 0;
 }

@@ -4,54 +4,95 @@
 
 #include "Arduino_LSM6DS3.h"
 
+//--------------------------------------------------------------------------------
+volatile bool noteState = false;
+const int reedPin = 11;
+const int ledPin = LED_BUILTIN;
 
-const int accBufferSize = 300;
-float accBuffer[accBufferSize];
+const int osr = 4;
+const int accBufferSize = 50 * osr;
+float accBuffer[accBufferSize] = { 0.0f };
 unsigned int accBufferWriteIndex = 0;
+
+bool keyTriggered = false;
+int numWaitSamples = accBufferSize / 2;  // number of samples to continue taking before halting and dumping the data out
+int curWaitSamples = 0;
+//--------------------------------------------------------------------------------
+
+void setup() {
+  Serial.begin(9600);
+  if (!IMU.begin()) {
+    Serial.println("Failed to initialize IMU!");
+    halt();
+  }
+  IMU.setAccODR(LSM6DS3::ODR_833_Hz);
+
+  attachInterrupt(digitalPinToInterrupt(reedPin), onReedTrigger, CHANGE);
+}
+
+
+void loop() {
+  updateAccBuffer();
+
+
+  if (curWaitSamples == numWaitSamples) {
+    dumpBufferToSerial();
+    halt();
+  }
+}
+
+//--------------------------------------------------------------------------------
+
+void onReedTrigger() {
+
+  if (!keyTriggered)
+    keyTriggered = true;
+  // Serial.print("x");
+  // dumpBufferToSerial();
+  // halt();
+}
+
+//--------------------------------------------------------------------------------
 
 void timerCallback() {
   updateAccBuffer();
 
-  if (accBufferWriteIndex == (accBufferSize - 1)) {
-    stopTimer();
-    dumpBufferToSerial();
-  }
+  // if (accBufferWriteIndex == (accBufferSize - 1)) {
+  //   stopTimer();
+  //   dumpBufferToSerial();
+  // }
 }
 
 void updateAccBuffer() {
-  float x, y, z;
-  IMU.readAcceleration(x, y, z);
+  if (IMU.accelerationAvailable()) {
+    float x, y, z;
+    IMU.readAcceleration(x, y, z);
 
-  accBuffer[accBufferWriteIndex] = x;
+    accBuffer[accBufferWriteIndex] = x;
 
-  accBufferWriteIndex++;
-  if (accBufferWriteIndex == accBufferSize)
-    accBufferWriteIndex = 0;
+    accBufferWriteIndex++;
+    if (accBufferWriteIndex == accBufferSize) {
+      accBufferWriteIndex = 0;
+    }
+
+    if (keyTriggered) {
+      curWaitSamples++;
+    }
+  }
 }
 
 void dumpBufferToSerial() {
   for (int i = 0; i < accBufferSize; i++) {
-    unsigned int r = accBufferWriteIndex + 1 + i;
+    unsigned int r = accBufferWriteIndex + i;
     if (r >= accBufferSize)
       r -= accBufferSize;
 
-    Serial.println(accBuffer[r]);
-    delay(1);
+    // Serial.print(i); Serial.print(" "); Serial.println(accBuffer[r]);
+    Serial.write((byte*)(accBuffer+r), 4);    
+    delay(10);
   }
 }
 
-void onReedTrigger() {
-  dumpBufferToSerial();
-}
-
-void setup() {
-  Serial.begin(115200);  
-  setupTimerInterrupt(1.0);
-}
-
-void loop() {
-  
-}
 
 //--------------------------------------------------------------------------------
 // Timer Functions
@@ -121,4 +162,13 @@ void TC3_Handler() {
 void stopTimer() {
   TcCount32* TC = (TcCount32*)TC3;
   TC->CTRLA.reg = 0;
+}
+
+
+//------------------------------------------------------------------
+
+void halt() {
+  while (1) {
+    delay(1000);
+  }
 }
