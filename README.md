@@ -23,6 +23,12 @@ Header Pins
 Board Dim: 85mm x 21mm
 ```
 
+### Gradient tag
+
+```
+width:    4.6mm
+height:  20.0mm
+```
 
 ## QRE1113 Notes
 
