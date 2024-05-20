@@ -21,10 +21,23 @@ Header Pins
 Board Dim: 85mm x 18mm
 ```
 
+### Gradient tag
+
+```
+width:    4.6mm
+height:  20.0mm
+```
 
 ## QRE1113 Notes
 
 Sweet spot is around 6mm distance
+
+
+[Datasheet](https://www.mouser.in/datasheet/2/308/QRE1113-1121523.pdf)
+
+<img width="496" alt="image" src="https://github.com/mhamilt/harpsichord-model-data/assets/33174176/ae605c5e-47d4-40e9-a4b1-86a8f60ec120">
+<img width="394" alt="image" src="https://github.com/mhamilt/harpsichord-model-data/assets/33174176/14ffb907-1013-4fd9-bb91-761ac52bf176">
+
 
 ## Paper Structure
 
