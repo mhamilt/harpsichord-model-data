@@ -1,8 +1,6 @@
 # harpsichord-model-data
 Sensor Sketches and CAD data releated to electronically augmented harpsichord model
 
-
-
 ## Jack Info
 
 ```
@@ -20,7 +18,7 @@ Jack 1:                    8.4mm
 Jack 2:                   23.4mm
 Jack 3:                   38.4mm
 Header Pins
-Board Dim: 85mm x 21mm
+Board Dim: 85mm x 18mm
 ```
 
 
