@@ -1,13 +1,34 @@
 # harpsichord-model-data
-Sensor Sketches and CAD data releated to electronically augmented harpsichord model
+Sensor Sketches and CAD data related to electronically augmented harpsichord model
 
 ## Jack Info
 
+### Dimensions
+
 ```
-Movement: ~8.0mm
-Width:     4.6mm
+height:   95.00mm
+depth:    12.45mm
+Movement: ~8.00mm
+Width:     4.60mm
 ```
 
+#### Tongue
+
+```
+HeightF: 29.50mm
+HeightB: 28.00mm 
+Depth  :  4.58mm
+Width  :  3.04mm
+```
+
+#### Damper
+
+```
+slot:        1.00mm
+width(max): 10.00mm
+```
+
+### Spacings
 ```
 soundboard to jack lip:    5.0mm
 Jack Pitch:               15.0mm
@@ -19,7 +40,12 @@ Jack 2:                   23.4mm
 Jack 3:                   38.4mm
 Header Pins
 Board Dim: 85mm x 18mm
+
 ```
+- Distance from back jacks to the centre block separating keys and cavity:   18.00mm
+- Space from the support strut for the jack block to the backplane: 51.00mm
+  - height of that are 14.00mm
+  - reducing to 10.00mm under strut
 
 ### Gradient tag
 
