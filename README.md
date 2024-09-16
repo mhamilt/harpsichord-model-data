@@ -3,6 +3,7 @@ Sensor Sketches and CAD data related to electronically augmented harpsichord mod
 
 ## Jack Info
 
+![jack dimensions](img/jack-dimensions.png)
 
 ### Dimensions
 
