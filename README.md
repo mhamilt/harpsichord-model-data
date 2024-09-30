@@ -30,7 +30,7 @@ Measurements and 3D models related to Haptic Harpsichord project
 ### Dimensions
 
 ```
-height:   95.00mm
+height:   93.00mm
 depth :   12.35mm
 width :    4.60mm
 
