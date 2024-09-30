@@ -31,9 +31,10 @@ Measurements and 3D models related to Haptic Harpsichord project
 
 ```
 height:   95.00mm
-depth:    12.35mm
+depth :   12.35mm
+width :    4.60mm
+
 Movement: ~8.00mm
-Width:     4.60mm
 ```
 
 #### Tongue
