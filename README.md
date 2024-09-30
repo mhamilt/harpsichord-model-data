@@ -34,7 +34,7 @@ height:   93.00mm
 depth :   12.35mm
 width :    4.60mm
 
-Movement: ~8.00mm
+movement: ~8.00mm
 ```
 
 #### Tongue
@@ -57,8 +57,8 @@ depth : 9.22mm
 #### Damper
 
 ```
-slot:        1.00mm
-width(max) : 10.00mm
+slot:         1.00mm
+width (max): 10.00mm
 height(max): 10.00mm
 ```
 
@@ -88,7 +88,7 @@ Board Dim: 85mm x 18mm
 
 ```
 width:    4.6mm
-height:  20.0mm
+height:  93.0mm
 ```
 
 ## Full Scale Keyboard 
@@ -106,8 +106,9 @@ The full scale version of the interface has 49 keys and 2 jack rows. The jacks a
 ```
 height:   93.50mm
 depth:    13.05mm
-Movement: ~8.00mm
-Width:     4.70mm
+width:     4.70mm
+
+movement: ~8.00mm
 ```
 
 
