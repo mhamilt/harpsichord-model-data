@@ -1,5 +1,25 @@
-# harpsichord-model-data
-Sensor Sketches and CAD data related to electronically augmented harpsichord model
+# Harpischord Model Data
+
+Measurements and 3D models related to Haptic Harpsichord project
+
+- [Harpischord Model Data](#harpischord-model-data)
+  - [Jack Info](#jack-info)
+    - [Dimensions](#dimensions)
+      - [Tongue](#tongue)
+      - [Quill](#quill)
+      - [Damper](#damper)
+    - [Spacings](#spacings)
+    - [Gradient Surface](#gradient-surface)
+  - [Full Scale Keyboard](#full-scale-keyboard)
+    - [Jack](#jack)
+      - [Dimensions](#dimensions-1)
+      - [Jack Pitch](#jack-pitch)
+      - [Travel](#travel)
+  - [QRE1113 Notes](#qre1113-notes)
+  - [Paper Structure](#paper-structure)
+  - [Paper Ideas](#paper-ideas)
+  - [Model](#model)
+
 
 ## Jack Info
 
