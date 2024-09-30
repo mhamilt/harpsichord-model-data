@@ -11,7 +11,7 @@ Sensor Sketches and CAD data related to electronically augmented harpsichord mod
 
 ```
 height:   95.00mm
-depth:    12.45mm
+depth:    12.35mm
 Movement: ~8.00mm
 Width:     4.60mm
 ```
@@ -24,15 +24,25 @@ HeightB: 28.00mm
 Depth  :  4.58mm
 Width  :  3.04mm  10.
 ```
+#### Quill
+
+```
+height: 2.30mm
+width : 0.70mm
+depth : 9.22mm
+```
+
 
 #### Damper
 
 ```
 slot:        1.00mm
-width(max): 10.00mm
+width(max) : 10.00mm
+height(max): 10.00mm
 ```
 
 ### Spacings
+
 ```
 soundboard to jack lip:    5.0mm
 Jack Pitch:               15.0mm
@@ -46,18 +56,49 @@ Header Pins
 Board Dim: 85mm x 18mm
 
 ```
+
 - Distance from back jacks to the centre block separating keys and cavity:   18.00mm
 - Space from the support strut for the jack block to the backplane: 51.00mm
   - height of that are 14.00mm
   - reducing to 10.00mm under strut
 - base of jack to start of slot (i.e. how much sticker is exposed): 21.00mm
 
-### Gradient tag
+### Gradient Surface
 
 ```
 width:    4.6mm
 height:  20.0mm
 ```
+
+## Full Scale Keyboard 
+
+|    ![ ](img/49-key-top.jpeg)    |
+| :-----------------------------: |
+| Top view of the 49-key keyboard |
+
+The full scale version of the interface has 49 keys and 2 jack rows. The jacks are generally around `4.65 mm`.
+
+### Jack 
+
+#### Dimensions
+
+```
+height:   93.50mm
+depth:    13.05mm
+Movement: ~8.00mm
+Width:     4.70mm
+```
+
+
+#### Jack Pitch
+
+There is not much variation in the pitch of the jacks. On average the centre-to-centre is `14.02 mm`. Likely error between jacks would compound across the full length. This should be compensated for by the separate pcbs which have groups of 7 sensors.
+
+Space between the jacks is `9.75 mm`, meaning central pcbs will have to have less than half this distance (`4.875mm`) in order to slot together.
+
+#### Travel
+
+Front jacks have a travel of about `8.5mm` and back jacks `9.0mm` between key release and full key press.
 
 ## QRE1113 Notes
 
