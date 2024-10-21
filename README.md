@@ -1,51 +1,83 @@
-# Harpischord Model Data
+# Harpsichord Model Data
 
 Measurements and 3D models related to Haptic Harpsichord project
 
-- [Harpischord Model Data](#harpischord-model-data)
-  - [Jack Info](#jack-info)
-    - [Dimensions](#dimensions)
-      - [Tongue](#tongue)
-      - [Quill](#quill)
-      - [Damper](#damper)
-    - [Spacings](#spacings)
-    - [Gradient Surface](#gradient-surface)
+- [Harpsichord Model Data](#harpsichord-model-data)
+  - [3-Key Model Keyboard](#3-key-model-keyboard)
+    - [Jack Info](#jack-info)
+      - [Dimensions](#dimensions)
+        - [Angled Sensor](#angled-sensor)
+        - [Tongue](#tongue)
+          - [Tongue Slot](#tongue-slot)
+        - [Quill](#quill)
+        - [Spring](#spring)
+        - [Damper](#damper)
+        - [Pivot](#pivot)
+      - [Spacings](#spacings)
+      - [Gradient Surface](#gradient-surface)
   - [Full Scale Keyboard](#full-scale-keyboard)
     - [Jack](#jack)
       - [Dimensions](#dimensions-1)
       - [Jack Pitch](#jack-pitch)
       - [Travel](#travel)
   - [QRE1113 Notes](#qre1113-notes)
+  - [Jack Fabrication](#jack-fabrication)
+    - [Laser cutting](#laser-cutting)
+    - [CNC](#cnc)
   - [Paper Structure](#paper-structure)
   - [Paper Ideas](#paper-ideas)
   - [Model](#model)
 
 
-## Jack Info
+## 3-Key Model Keyboard
+
+### Jack Info
 
 ![jack dimensions](img/jack-dimensions.png)
 
 ![with damper slots](img/jack-dimensions-w-slots.png)
 
-### Dimensions
+#### Dimensions
 
 ```
 height:   93.00mm
-depth :   12.35mm
-width :    4.60mm
+depth :   12.35mml
+width :    4.30mm
 
-movement: ~8.00mm
+movement: ~7.22mm
 ```
 
-#### Tongue
+##### Angled Sensor
+
+```
+offsetF:   20.00mm
+offsetB:   26.00mm
+```
+
+##### Tongue
+
+
+```
+heightf: 29.40mm
+heightb: 24.18mm
+
+Angle :   61.1134º {180*atan(5.22/2.88)/pi}
+depth :   4.24mm
+width :   2.88mm
+to quill ctr: 9.34mm
+pivot hol 19.20mm
+```
+
+###### Tongue Slot
 
 ```
 HeightF: 29.50mm
 HeightB: 28.00mm 
 Depth  :  4.58mm
-Width  :  3.04mm  10.
+Width  :  3.04mm
 ```
-#### Quill
+
+##### Quill
 
 ```
 height: 2.30mm
@@ -53,8 +85,14 @@ width : 0.70mm
 depth : 9.22mm
 ```
 
+##### Spring
 
-#### Damper
+```
+height: 13.84mm
+width :  1.20mm
+```
+
+##### Damper
 
 ```
 slot:         1.00mm
@@ -62,17 +100,24 @@ width (max): 10.00mm
 height(max): 10.00mm
 ```
 
-### Spacings
+##### Pivot
 
 ```
-soundboard to jack lip:    5.0mm
-Jack Pitch:               15.0mm
-Block Depth:              74.0mm
-Depth to first Jack:     ~63.4mm
-Depth to 1st Jack Centre:~65.7mm
-Jack 1:                    8.4mm
-Jack 2:                   23.4mm
-Jack 3:                   38.4mm
+from top: 19.50mm
+diameter:  0.50mm
+```
+
+#### Spacings
+
+```
+soundboard to jack lip:    5.0000mm
+Jack Pitch:               14.4875mm
+Block Depth:              74.0000mm
+Depth to first Jack:     ~63.4000mm
+Depth to 1st Jack Centre:~65.7000mm
+Jack 1:                    8.4000mm
+Jack 2:                   23.4000mm
+Jack 3:                   38.4000mm
 Header Pins
 Board Dim: 85mm x 18mm
 
@@ -84,7 +129,7 @@ Board Dim: 85mm x 18mm
   - reducing to 10.00mm under strut
 - base of jack to start of slot (i.e. how much sticker is exposed): 21.00mm
 
-### Gradient Surface
+#### Gradient Surface
 
 ```
 width:    4.6mm
@@ -106,12 +151,14 @@ The full scale version of the interface has 49 keys and 2 jack rows. The jacks a
 ```
 height:   93.50mm
 depth:    13.05mm
-width:     4.70mm
-
-movement: ~8.00mm
+width:     4.50mm
+movement: ~8.50mm
 ```
 
-
+```
+Jack height exposed in cavity   : 39.0mm
+Jack height exposed on key press: 30.9mm
+```
 #### Jack Pitch
 
 There is not much variation in the pitch of the jacks. On average the centre-to-centre is `14.02 mm`. Likely error between jacks would compound across the full length. This should be compensated for by the separate pcbs which have groups of 7 sensors.
@@ -120,7 +167,7 @@ Space between the jacks is `9.75 mm`, meaning central pcbs will have to have les
 
 #### Travel
 
-Front jacks have a travel of about `8.5mm` and back jacks `9.0mm` between key release and full key press.
+Front jacks have a travel of about `~7.2mm` and back jacks `7.5mm` between key release and full key press.
 
 ## QRE1113 Notes
 
@@ -132,6 +179,14 @@ Sweet spot is around 6mm distance
 <img width="496" alt="image" src="https://github.com/mhamilt/harpsichord-model-data/assets/33174176/ae605c5e-47d4-40e9-a4b1-86a8f60ec120">
 <img width="394" alt="image" src="https://github.com/mhamilt/harpsichord-model-data/assets/33174176/14ffb907-1013-4fd9-bb91-761ac52bf176">
 
+
+## Jack Fabrication
+
+### Laser cutting
+
+After cutting and sanding back a charred edge, the 3-Key Jacks were `~11.5mm` which is about a loss of `~1mm` in total or `0.5mm`. Vectors for jacks should compensated by an additional `0.5mm`. The damper groove should be a simple vector and not a rectangular path.
+
+### CNC
 
 ## Paper Structure
 
