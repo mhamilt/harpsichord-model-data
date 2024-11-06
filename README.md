@@ -20,6 +20,7 @@ Measurements and 3D models related to Haptic Harpsichord project
       - [Dimensions](#dimensions-1)
       - [Jack Pitch](#jack-pitch)
       - [Travel](#travel)
+      - [Cavity](#cavity)
   - [QRE1113 Notes](#qre1113-notes)
   - [Jack Fabrication](#jack-fabrication)
     - [Laser cutting](#laser-cutting)
@@ -169,6 +170,18 @@ Space between the jacks is `9.75 mm`, meaning central pcbs will have to have les
 
 Front jacks have a travel of about `~7.2mm` and back jacks `7.5mm` between key release and full key press.
 
+#### Cavity
+
+```
+Key to Roof (pressed): 28.00mm
+Key to Roof (release): 39.00mm
+Key Locating Slot to Roof: 28.50mm
+```
+```
+Area to be removed:
+10mm x 15mm
+Including leather
+```
 ## QRE1113 Notes
 
 Sweet spot is around 6mm distance
